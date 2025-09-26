@@ -1,0 +1,34 @@
+/*
+ * Copyright (c) 2022 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+
+#include "phomos.dtsi"
+
+&transform { 
+    col-offset = <7>;
+};
+
+&kscan0 {
+    row-gpios
+            = <&pro_micro 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pro_micro 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pro_micro 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pro_micro 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pro_micro 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pro_micro 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            ;
+
+    col-gpios
+        = <&pro_micro 0 GPIO_ACTIVE_HIGH>
+        , <&pro_micro 0 GPIO_ACTIVE_HIGH>
+        , <&pro_micro 0 GPIO_ACTIVE_HIGH>
+        , <&pro_micro 0 GPIO_ACTIVE_HIGH>
+        , <&pro_micro 0 GPIO_ACTIVE_HIGH>
+        , <&pro_micro 0 GPIO_ACTIVE_HIGH>
+        , <&pro_micro 0 GPIO_ACTIVE_HIGH>
+        , <&pro_micro 0 GPIO_ACTIVE_HIGH>
+        ;
+};

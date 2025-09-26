@@ -1,0 +1,56 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+#include "keys_es.h"
+
+
+/ {
+        keymap {
+                
+                default_layer {
+                        display-name = "Default";
+
+// -----------------------------------------------------------------------------------------
+// |Vup|   esc   |  f1  |  f2  |  f3  |  f4  |  f5  |   |  f6  |  f7  |  f8  |  f9  |  f10 |  f11 |  f12 |  prsc  |
+// |Vdo|    ´    |  1   |  2   |  3   |  4   |  5   |   |  6   |  7   |  8   |  9   |  0   |  -   |  =   | bkspace|
+// | M1|   TAB   |  Q   |  W   |  E   |  R   |  T   |   |  Y   |  U   |  I   |  O   |  P   |  [   |  ]   |  Del   |
+// | M2|   caps  |  A   |  S   |  D   |  F   |  G   |   |  H   |  J   |  K   |  L   |  ;   |  '   |  \   |  Enter |
+// | M3|   shift |  Z   |  X   |  C   |  V   |  B   |   |  N   |  M   |  ,   |  .   |  home|  ↑   |  end |  M5    |
+// | M4|   ctrl  |  win |  alt | ExtLy|    space    |   | space| ExtLy|  alt |  ctrl|  ←   |  ↓   |  →   |  M6    |
+                        bindings = <
+   &kp C_VOL_UP &kp ESC      &kp F1   &kp F2   &kp F3  &kp F4  &kp F5          &kp F6    &kp F7 &kp F8     &kp F9    &kp F10  &kp F11      &kp F12            &kp PSCRN
+   &kp C_VOL_DN &kp GRAVE    &kp N1   &kp N2   &kp N3  &kp N4  &kp N5          &kp N6    &kp N7 &kp N8     &kp N9    &kp N0   &kp MINUS    &kp EQUAL          &kp BSPC
+   &kp F13      &kp TAB      &kp Q    &kp W    &kp E   &kp R   &kp T           &kp Y     &kp U  &kp I      &kp O     &kp P    &kp LBKT     &kp GRAVE          &kp DEL
+   &kp F14      &kp CAPS     &kp A    &kp S    &kp D   &kp F   &kp G           &kp H     &kp J  &kp K      &kp L     &kp SEMI &kp SQT      &kp BSLH           &kp ENTER
+   &kp F15      &kp LSHFT    &kp Z    &kp X    &kp C   &kp V   &kp B           &kp N     &kp M  &kp COMMA  &kp DOT   &kp HOME &kp UP       &kp END            &kp F17
+   &kp F16      &kp LCTRL    &kp LGUI &kp LALT &mo 3     &kp SPACE             &kp SPACE &mo 1  &kp RALT   &kp RCTRL &kp LEFT &kp DOWN     &kp RIGHT          &kp F18
+                        >;
+                };
+                Simbol_layer {
+                        display-name = "Extra";
+
+// -----------------------------------------------------------------------------------------
+// |BT0| BtClr  |      |      |      |      |      |   |      |      |      |      |      |      |      |        |
+// |BT1|BtClrAll| "|"  |      |      |      |      |   |      |   `  |      |      |   7  |  8   |  9   |        |
+// |BT2|        |  \   |  /   |  ¡   |  !   |  $   |   |      |   '  |  #   |  %   |   4  |  5   |  6   |        |
+// |BT3|        |  (   |  )   |  [   |  ]   |  @   |   |  ~   |   *  |  -   |  =   |   1  |  2   |  3   |        |
+// |BT4|        |  <   |  >   |  {   |  }   |  &   |   |      |   ^  |  _   |  +   |   0  |      |      |        |
+// |USB|        |      |      |      |             |   |      |      |      |      |      |      |      |        |
+                        bindings = <  
+   &bt BT_SEL 0 &bt BT_CLR     &trans      &trans      &trans    &trans   &trans             &trans        &trans    &trans    &trans    &trans    &trans    &trans        &trans
+   &bt BT_SEL 1 &bt BT_CLR_ALL &trans      &trans      &trans    &trans   &trans             &trans        &kp GRAVE &trans    &trans    &kp KP_N7 &kp KP_N8 &kp KP_N9     &trans
+   &bt BT_SEL 2 &trans         &kp BSLH    &kp FSLH    &kp IEXCL &kp EXCL &kp DLLR           &trans        &kp SQT   &kp HASH  &kp PRCNT &kp KP_N4 &kp KP_N5 &kp KP_N76    &trans
+   &bt BT_SEL 3 &trans         &kp LPAR    &kp RPAR    &kp LBKT  &kp RBKT &kp AT             &kp TILDE     &kp ASTRK &kp MINUS &kp EQUAL &kp KP_N1 &kp KP_N2 &kp KP_N3     &trans
+   &bt BT_SEL 4 &trans         &kp LT      &kp GT      &kp LBRC  &kp RBRC &kp AMPS           &trans        &kp CARET &kp UNDER &kp PLUS  &kp KP_N0 &trans    &trans        &trans
+   &out OUT_TOG &trans         &trans      &trans      &trans        &trans                  &trans        &trans    &trans    &trans    &trans    &trans    &trans        &trans
+                        >;
+                };
+        };
+};
