@@ -1,0 +1,11 @@
+file_format: "1"
+id: phomos
+name: Phomos
+type: shield
+url: https://github.com/creatosis/zmk-config-Phomos
+requires: [nice_nano_v2]
+features:
+  - keys
+siblings:
+  - phomos_left
+  - phomos_right
