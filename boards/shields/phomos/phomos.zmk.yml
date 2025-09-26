@@ -1,0 +1,11 @@
+file_format: "1"
+id: phomos
+name: Phomos
+type: shield
+url: https://github.com/GEIGEIGEIST/TOTEM
+requires: [seeeduino_xiao_ble]
+features:
+  - keys
+siblings:
+  - phomos_left
+  - phomos_right
