@@ -4,7 +4,7 @@
     phomos_layout: Phomos_layout {
         compatible = "zmk,physical-layout";
         display-name = "PhomosLayout";
-        transform = <&transform>;
+        transform = <&default_transform>;
 
 
         keys  //                     w   h    x    y     rot    rx    ry
