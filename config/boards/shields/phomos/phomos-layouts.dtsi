@@ -1,7 +1,7 @@
 #include <physical_layouts.dtsi>
 
 / {
-    phomos_layout: Phomos_layout {
+    phomos_layout: phomos_layout {
         compatible = "zmk,physical-layout";
         display-name = "PhomosLayout";
         transform = <&default_transform>;
