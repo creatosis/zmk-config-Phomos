@@ -39,15 +39,15 @@
 // -----------------------------------------------------------------------------------------
 // |BT0| BtClr  |      |      |      |      |      |   |      |      |      |      |      |      |      |        |
 // |BT1|BtClrAll| "|"  |      |      |      |      |   |      |   `  |      |      |   7  |  8   |  9   |        |
-// |BT2|        |  \   |  /   |  ¡   |  !   |  $   |   |      |   '  |  #   |  %   |   4  |  5   |  6   |        |
-// |BT3|        |  (   |  )   |  [   |  ]   |  @   |   |  ~   |   *  |  -   |  =   |   1  |  2   |  3   |        |
+// |BT2|        |  \   |  /   |  ?   |  !   |  $   |   |      |   '  |  #   |  %   |   4  |  5   |  6   |        |
+// |BT3|        |  [   |  ]   |  (   |  )   |  @   |   |  ~   |   *  |  -   |  =   |   1  |  2   |  3   |        |
 // |BT4|        |  <   |  >   |  {   |  }   |  &   |   |      |   ^  |  _   |  +   |   0  |      |      |        |
 // |USB|        |      |      |      |             |   |      |      |      |      |      |      |      |        |
                         bindings = <  
    &bt BT_SEL 0 &bt BT_CLR     &trans      &trans      &trans    &trans   &trans             &trans        &trans    &trans    &trans    &trans    &trans    &kp KP_NUM    &trans
    &bt BT_SEL 1 &bt BT_CLR_ALL &trans      &trans      &trans    &trans   &trans             &trans        &kp GRAVE &trans    &trans    &kp KP_N7 &kp KP_N8 &kp KP_N9     &trans
-   &bt BT_SEL 2 &trans         &kp BSLH    &kp FSLH    &kp IEXCL &kp EXCL &kp DLLR           &trans        &kp SQT   &kp HASH  &kp PRCNT &kp KP_N4 &kp KP_N5 &kp KP_N6     &trans
-   &bt BT_SEL 3 &trans         &kp LPAR    &kp RPAR    &kp LBKT  &kp RBKT &kp AT             &kp TILDE     &kp ASTRK &kp MINUS &kp EQUAL &kp KP_N1 &kp KP_N2 &kp KP_N3     &trans
+   &bt BT_SEL 2 &trans         &kp BSLH    &kp FSLH    &QMARK    &kp EXCL &kp DLLR           &trans        &kp SQT   &kp HASH  &kp PRCNT &kp KP_N4 &kp KP_N5 &kp KP_N6     &trans
+   &bt BT_SEL 3 &trans         &kp LBKT    &kp RBKT    &kp LPAR  &kp RPAR &kp AT             &kp TILDE     &kp ASTRK &kp MINUS &kp EQUAL &kp KP_N1 &kp KP_N2 &kp KP_N3     &trans
    &bt BT_SEL 4 &trans         &kp LT      &kp GT      &kp LBRC  &kp RBRC &kp AMPS           &trans        &kp CARET &kp UNDER &kp PLUS  &kp KP_N0 &trans    &trans        &trans
    &out OUT_TOG &trans         &trans      &trans      &trans        &trans                  &trans        &trans    &trans    &trans    &trans    &trans    &trans        &trans
                         >;
