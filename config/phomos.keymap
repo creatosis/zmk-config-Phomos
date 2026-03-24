@@ -18,77 +18,120 @@
                 default_layer {
                         display-name = "BaseESP";
 
-// -----------------------------------------------------------------------------------------
+// --------------------------------------------------   -----------------------------------------------------------
 // |Vup|   esc   |  f1  |  f2  |  f3  |  f4  |  f5  |   |  f6  |  f7  |  f8  |  f9  |  f10 |  f11 |  f12 |  prsc  |
 // |Vdo|    º    |  1   |  2   |  3   |  4   |  5   |   |  6   |  7   |  8   |  9   |  0   |  '   |  !   | bkspace|
 // | M1|   TAB   |  Q   |  W   |  E   |  R   |  T   |   |  Y   |  U   |  I   |  O   |  P   |  `   |  +   |  Del   |
 // | M2|   caps  |  A   |  S   |  D   |  F   |  G   |   |  H   |  J   |  K   |  L   |  Ñ   |  ´   |  -   |  Enter |
 // | M3|   shift |  Z   |  X   |  C   |  V   |  B   |   |  N   |  M   |  ,   |  .   |  home|  ↑   |  end |  M5    |
-// | M4|   ctrl  |  win |  alt | ExtLy|    space    |   | space| ExtLy|  alt |  ctrl|  ←   |  ↓   |  →   |  M6    |
+// | M4|   ctrl  |  win |  alt | numLy|    space    |   | space| SymLy|  alt |  ctrl|  ←   |  ↓   |  →   |  M6    |
                         bindings = <
    &kp C_VOL_UP &kp ESC      &kp F1   &kp F2   &kp F3  &kp F4  &kp F5          &kp F6    &kp F7 &kp F8     &kp F9    &kp F10         &kp F11      &kp F12            &kp PSCRN
    &kp C_VOL_DN &kp ES_ORDM  &kp N1   &kp N2   &kp N3  &kp N4  &kp N5          &kp N6    &kp N7 &kp N8     &kp N9    &kp N0          &kp ES_SQT   &kp ES_IEXCL       &kp BSPC
    &kp F13      &kp TAB      &kp Q    &kp W    &kp E   &kp R   &kp T           &kp Y     &kp U  &kp I      &kp O     &kp P           &kp ES_GRAVE &kp ES_PLUS        &kp DEL
    &kp F14      &kp CAPS     &kp A    &kp S    &kp D   &kp F   &kp G           &kp H     &kp J  &kp K      &kp L     &kp ES_N_TILDE  &kp ES_ACUTE &kp ES_C_CEDILLA   &kp ENTER
    &kp F15      &kp LSHFT    &kp Z    &kp X    &kp C   &kp V   &kp B           &kp N     &kp M  &kp COMMA  &kp DOT   &kp HOME        &kp UP       &kp END            &kp F17
-   &kp F16      &kp LCTRL    &kp LGUI &kp LALT &mo 1     &kp SPACE             &kp SPACE &mo 1  &kp RALT   &kp RCTRL &kp LEFT        &kp DOWN     &kp RIGHT          &kp F18
+   &kp F16      &kp LCTRL    &kp LGUI &kp LALT &mo 1     &kp SPACE             &kp SPACE &mo 2  &kp RALT   &kp RCTRL &kp LEFT        &kp DOWN     &kp RIGHT          &kp F18
+                        >;
+                };
+                number_layer {
+                        display-name = "NumESP";
+
+// -------------------------------------------------   -----------------------------------------------------------
+// |BT0|        |numlok|      |      |      |      |   |      |      |      |      |      |      |      |        |
+// |BT1|        |      |      |      |      |      |   |      |      |      |      |      |      |      |        |
+// |BT2|        |  6   |  7   |  8   |  9   |  %   |   |      |      |      |      |      |      |      |        |
+// |BT3|        |  2   |  3   |  4   |  5   |  *   |   |      | esc  |   ´  |bkspac|Enter |      |      |        |
+// |BT4|        |  +   |  ,   |  0   |  1   |  -   |   |      |      |   '  |      |      |      |      |        |
+// |USB|        |      |      |      |             |   |      |      |      |      |      |      |      |        |
+                        bindings = <  
+   &bt BT_SEL 0 &trans         &kp KP_NUM  &trans      &trans        &trans       &trans              &trans   &trans     &trans       &trans       &trans    &trans    &trans        &trans
+   &bt BT_SEL 1 &trans         &trans      &trans      &trans        &trans       &trans              &trans   &trans     &trans       &trans       &trans    &trans    &trans        &trans
+   &bt BT_SEL 2 &trans         &kp KP_N6   &kp KP_N7   &kp KP_N8     &kp KP_N9    &kp ES_PRCNT        &trans   &trans     &trans       &trans       &trans    &trans    &trans        &trans
+   &bt BT_SEL 3 &trans         &kp KP_N2   &kp KP_N3   &kp KP_N4     &kp KP_N5    &kp ES_ASTRK        &trans   &kp ESC    &kp ES_ACUTE &kp BSPC     &kp ENTER &trans    &trans        &trans
+   &bt BT_SEL 4 &trans         &kp ES_PLUS &kp COMMA   &kp KP_N0     &kp KP_N1    &kp ES_MINUS        &trans   &trans     &kp ES_CARET &trans       &trans    &trans    &trans        &trans
+   &out OUT_TOG &trans         &trans      &trans      &trans              &trans                     &trans   &trans     &trans       &trans       &trans    &trans    &trans        &trans
                         >;
                 };
                 Simbol_layer {
-                        display-name = "ExtraESP";
+                        display-name = "SymESP";
 
-// -----------------------------------------------------------------------------------------
-// |BT0| BtClr  |      |      |      |      |      |   |      |      |      |      |      |      |      |  ESP   |
-// |BT1|BtClrAll| "|"  |      |      |      |      |   |      |   `  |  ´   |      |   7  |  8   |  9   |  ENG   |
-// |BT2|        |  \   |  /   |  ¡   |  !   |  $   |   |  ç   |   '  |  #   |  %   |   4  |  5   |  6   |        |
-// |BT3|        |  (   |  )   |  [   |  ]   |  @   |   |  ~   |   *  |  -   |  =   |   1  |  2   |  3   |        |
-// |BT4|        |  <   |  >   |  {   |  }   |  &   |   |      |   ^  |  _   |  +   |   0  |      |      |        |
-// |USB|        |      |      |      |             |   |      |      |      |      |      |      |      |        |
+// -------------------------------------------------   -----------------------------------------------------------
+// |BtClr|      |      |      |      |      |      |   | ESP  | ENG  |      |      |      |      |      |        |
+// |BtClrAll|   |      |      |      |      |      |   |      |      |      |      |      |      |      |        |
+// |   |        |  [   |  ]   |  (   |  )   |      |   |  ç   |   ^  |  `   | "|"  |      |      |      |        |
+// |   |        |  ¿   |  ?   |  ¡   |  !   |      |   |  ~   |  @   |  $   |  #   |  &   |      |      |        |
+// |   |        |  <   |  >   |  {   |  }   |      |   |      |      |  _   |  /   |  \   |      |      |        |
+// |   |        |      |      |      |             |   |      |      |      |      |      |      |      |        |
                         bindings = <  
-   &bt BT_SEL 0 &bt BT_CLR     &trans      &trans      &trans        &trans       &trans           &trans           &trans       &trans       &trans       &trans    &trans    &kp KP_NUM    &to 0
-   &bt BT_SEL 1 &bt BT_CLR_ALL &trans      &trans      &kp ES_IQMARK &kp ES_QMARK &trans           &trans           &kp ES_GRAVE &kp ES_ACUTE &trans       &kp KP_N7 &kp KP_N8 &kp KP_N9     &to 2
-   &bt BT_SEL 2 &trans         &kp ES_BSLH &kp ES_FSLH &kp ES_IEXCL  &kp ES_EXCL  &kp ES_DLLR      &kp ES_C_CEDILLA &kp ES_SQT   &kp ES_HASH  &kp ES_PRCNT &kp KP_N4 &kp KP_N5 &kp KP_N6     &trans
-   &bt BT_SEL 3 &trans         &kp ES_LPAR &kp ES_RPAR &kp ES_LBKT   &kp ES_RBKT  &kp ES_AT        &kp ES_TILDE     &kp ES_ASTRK &kp ES_MINUS &kp ES_EQUAL &kp KP_N1 &kp KP_N2 &kp KP_N3     &trans
-   &bt BT_SEL 4 &trans         &kp ES_LT   &kp ES_GT   &kp ES_LBRC   &kp ES_RBRC  &kp ES_AMPS      &trans           &kp ES_CARET &kp ES_UNDER &kp ES_PLUS  &kp KP_N0 &trans    &trans        &trans
-   &out OUT_TOG &trans         &trans      &trans      &trans              &trans                  &trans           &trans       &trans       &trans       &trans    &trans    &trans        &trans
+   &bt BT_CLR       &trans     &trans        &trans       &trans        &trans       &trans              &to 0            &to 3        &trans       &trans       &trans      &trans    &trans        &trans
+   &bt BT_CLR_ALL   &trans     &trans        &trans       &trans        &trans       &trans              &trans           &trans       &trans       &trans       &trans      &trans    &trans        &trans
+   &trans           &trans     &kp ES_LBKT   &kp ES_RBKT  &kp ES_LPAR   &kp ES_RPAR  &trans              &kp ES_C_CEDILLA &kp ES_CARET &kp ES_GRAVE &kp ES_PIPE  &trans      &trans    &trans        &trans
+   &trans           &trans     &kp ES_IQMARK &kp ES_QMARK &kp ES_IEXCL  &kp ES_EXCL  &trans              &kp ES_TILDE     &kp ES_AT    &kp ES_DLLR  &kp ES_HASH  &kp ES_AMPS &trans    &trans        &trans
+   &trans           &trans     &kp ES_LT     &kp ES_GT    &kp ES_LBRC   &kp ES_RBRC  &trans              &trans           &trans       &kp ES_UNDER &kp ES_FSLH  &kp ES_BSLH &trans    &trans        &trans
+   &trans           &trans     &trans        &trans       &trans              &trans                     &trans           &trans       &trans       &trans       &trans      &trans    &trans        &trans
                         >;
                 };
+
+
+
                 default_eng {
                         display-name = "BaseENG";
 
-// -----------------------------------------------------------------------------------------
+// --------------------------------------------------   -----------------------------------------------------------
 // |Vup|   esc   |  f1  |  f2  |  f3  |  f4  |  f5  |   |  f6  |  f7  |  f8  |  f9  |  f10 |  f11 |  f12 |  prsc  |
 // |Vdo|    ´    |  1   |  2   |  3   |  4   |  5   |   |  6   |  7   |  8   |  9   |  0   |  -   |  =   | bkspace|
 // | M1|   TAB   |  Q   |  W   |  E   |  R   |  T   |   |  Y   |  U   |  I   |  O   |  P   |  [   |  ]   |  Del   |
 // | M2|   caps  |  A   |  S   |  D   |  F   |  G   |   |  H   |  J   |  K   |  L   |  ;   |  '   |  \   |  Enter |
 // | M3|   shift |  Z   |  X   |  C   |  V   |  B   |   |  N   |  M   |  ,   |  .   |  home|  ↑   |  end |  M5    |
-// | M4|   ctrl  |  win |  alt | ExtLy|    space    |   | space| ExtLy|  alt |  ctrl|  ←   |  ↓   |  →   |  M6    |
+// | M4|   ctrl  |  win |  alt | numLy|    space    |   | space| SymLy|  alt |  ctrl|  ←   |  ↓   |  →   |  M6    |
                         bindings = <
    &kp C_VOL_UP &kp ESC      &kp F1   &kp F2   &kp F3  &kp F4  &kp F5          &kp F6    &kp F7 &kp F8     &kp F9    &kp F10  &kp F11      &kp F12            &kp PSCRN
    &kp C_VOL_DN &kp GRAVE    &kp N1   &kp N2   &kp N3  &kp N4  &kp N5          &kp N6    &kp N7 &kp N8     &kp N9    &kp N0   &kp MINUS    &kp EQUAL          &kp BSPC
    &kp F13      &kp TAB      &kp Q    &kp W    &kp E   &kp R   &kp T           &kp Y     &kp U  &kp I      &kp O     &kp P    &kp LBKT     &kp GRAVE          &kp DEL
    &kp F14      &kp CAPS     &kp A    &kp S    &kp D   &kp F   &kp G           &kp H     &kp J  &kp K      &kp L     &kp SEMI &kp SQT      &kp BSLH           &kp ENTER
    &kp F15      &kp LSHFT    &kp Z    &kp X    &kp C   &kp V   &kp B           &kp N     &kp M  &kp COMMA  &kp DOT   &kp HOME &kp UP       &kp END            &kp F17
-   &kp F16      &kp LCTRL    &kp LGUI &kp LALT &mo 3     &kp SPACE             &kp SPACE &mo 3  &kp RALT   &kp RCTRL &kp LEFT &kp DOWN     &kp RIGHT          &kp F18
+   &kp F16      &kp LCTRL    &kp LGUI &kp LALT &mo 4     &kp SPACE             &kp SPACE &mo 5  &kp RALT   &kp RCTRL &kp LEFT &kp DOWN     &kp RIGHT          &kp F18
                         >;
                 };
-                Simbol_eng {
-                        display-name = "ExtraENG";
 
-// -----------------------------------------------------------------------------------------
-// |BT0| BtClr  |      |      |      |      |      |   |      |      |      |      |      |      |      |  ESP   |
-// |BT1|BtClrAll| "|"  |      |      |      |      |   |      |   `  |      |      |   7  |  8   |  9   |  ENG   |
-// |BT2|        |  \   |  /   |  ?   |  !   |  $   |   |      |   '  |  #   |  %   |   4  |  5   |  6   |        |
-// |BT3|        |  [   |  ]   |  (   |  )   |  @   |   |  ~   |   *  |  -   |  =   |   1  |  2   |  3   |        |
-// |BT4|        |  <   |  >   |  {   |  }   |  &   |   |      |   ^  |  _   |  +   |   0  |      |      |        |
+                Number_eng {
+                        display-name = "NumENG";
+
+// -------------------------------------------------   -----------------------------------------------------------
+// |BT0|        |numlok|      |      |      |      |   |      |      |      |      |      |      |      |        |
+// |BT1|        |      |      |      |      |      |   |      |      |      |      |      |      |      |        |
+// |BT2|        |  6   |  7   |  8   |  9   |  %   |   |      |      |      |      |      |      |      |        |
+// |BT3|        |  2   |  3   |  4   |  5   |  *   |   |      | esc  |   ´  |bkspac|Enter |      |      |        |
+// |BT4|        |  +   |  ,   |  0   |  1   |  -   |   |      |      |   '  |      |      |      |      |        |
 // |USB|        |      |      |      |             |   |      |      |      |      |      |      |      |        |
                         bindings = <  
-   &bt BT_SEL 0 &bt BT_CLR     &trans      &trans      &trans    &trans   &trans             &trans        &trans    &trans    &trans    &trans    &trans    &kp KP_NUM    &to 0
-   &bt BT_SEL 1 &bt BT_CLR_ALL &trans      &trans      &trans    &trans   &trans             &trans        &kp GRAVE &trans    &trans    &kp KP_N7 &kp KP_N8 &kp KP_N9     &to 2
-   &bt BT_SEL 2 &trans         &kp BSLH    &kp FSLH    &kp QMARK &kp EXCL &kp DLLR           &trans        &kp SQT   &kp HASH  &kp PRCNT &kp KP_N4 &kp KP_N5 &kp KP_N6     &trans
-   &bt BT_SEL 3 &trans         &kp LBKT    &kp RBKT    &kp LPAR  &kp RPAR &kp AT             &kp TILDE     &kp ASTRK &kp MINUS &kp EQUAL &kp KP_N1 &kp KP_N2 &kp KP_N3     &trans
-   &bt BT_SEL 4 &trans         &kp LT      &kp GT      &kp LBRC  &kp RBRC &kp AMPS           &trans        &kp CARET &kp UNDER &kp PLUS  &kp KP_N0 &trans    &trans        &trans
-   &out OUT_TOG &trans         &trans      &trans      &trans        &trans                  &trans        &trans    &trans    &trans    &trans    &trans    &trans        &trans
+   &bt BT_SEL 0 &trans         &kp KP_NUM  &trans      &trans        &trans       &trans              &trans   &trans     &trans       &trans       &trans    &trans    &trans        &trans
+   &bt BT_SEL 1 &trans         &trans      &trans      &trans        &trans       &trans              &trans   &trans     &trans       &trans       &trans    &trans    &trans        &trans
+   &bt BT_SEL 2 &trans         &kp KP_N6   &kp KP_N7   &kp KP_N8     &kp KP_N9    &kp PRCNT           &trans   &trans     &trans       &trans       &trans    &trans    &trans        &trans
+   &bt BT_SEL 3 &trans         &kp KP_N2   &kp KP_N3   &kp KP_N4     &kp KP_N5    &kp ASTRK           &trans   &kp ESC    &kp CARET    &kp BSPC     &kp ENTER &trans    &trans        &trans
+   &bt BT_SEL 4 &trans         &kp PLUS    &kp COMMA   &kp KP_N0     &kp KP_N1    &kp MINUS           &trans   &trans     &trans       &trans       &trans    &trans    &trans        &trans
+   &out OUT_TOG &trans         &trans      &trans      &trans              &trans                     &trans   &trans     &trans       &trans       &trans    &trans    &trans        &trans
+                        >;
+                };
+
+                Simbol_eng {
+                        display-name = "SymENG";
+
+// -------------------------------------------------   -----------------------------------------------------------
+// | BtClr  |   |      |      |      |      |      |   | ESP  | ENG  |      |      |      |      |      |        |
+// |BtClrAll|   |      |      |      |      |      |   |      |      |      |      |      |      |      |        |
+// |   |        |  \   |  /   |  (   |  )   |      |   |      |  ^   |  `   | "|"  |      |      |      |        |
+// |   |        |  [   |  ]   |  ?   |  !   |      |   |  ~   |  @   |  $   |  #   |  &   |      |      |        |
+// |   |        |  <   |  >   |  {   |  }   |      |   |      |      |  _   |      |      |      |      |        |
+// |   |        |      |      |      |             |   |      |      |      |      |      |      |      |        |
+                        bindings = <  
+   &bt BT_CLR      &trans      &trans      &trans      &trans      &trans    &trans            &to 0         &to 3     &trans    &trans    &trans    &trans    &trans        &trans
+   &bt BT_CLR_ALL  &trans      &trans      &trans      &trans      &trans    &trans            &trans        &trans    &trans    &trans    &trans    &trans    &trans        &trans
+   &trans          &trans      &kp BSLH    &kp FSLH    &kp LPAR    &kp RPAR  &trans            &trans        &kp CARET &kp GRAVE &kp PIPE  &trans    &trans    &trans        &trans
+   &trans          &trans      &kp LBKT    &kp RBKT    &kp QMARK   &kp EXCL  &trans            &kp TILDE     &kp AT    &kp DLLR  &kp HASH  &kp AMPS  &trans    &trans        &trans
+   &trans          &trans      &kp LT      &kp GT      &kp LBRC    &kp RBRC  &trans            &trans        &trans    &kp UNDER &trans    &trans    &trans    &trans        &trans
+   &trans          &trans      &trans      &trans      &trans        &trans                    &trans        &trans    &trans    &trans    &trans    &trans    &trans        &trans
                         >;
                 };
 
